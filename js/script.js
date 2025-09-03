@@ -23,6 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Llamamos a la función para cada sección
-    cargarContenido('pages/jaeger.html', 'presentacion');
+    cargarContenido('pages/delacruz.html', 'delacruz');
+    cargarContenido('pages/altamirano.html', 'altamirano');
+    cargarContenido('pages/lopezpuma.html', 'lopezpuma');
+    cargarContenido('pages/molleda.html', 'molleda');
+    cargarContenido('pages/cordova.html', 'cordova');
 
 });
