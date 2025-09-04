@@ -23,20 +23,24 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(html => {
           const doc = new DOMParser().parseFromString(html, "text/html");
 
-          // Inyectar estilos <style> y <link>
-          doc.querySelectorAll("style, link[rel='stylesheet']").forEach(el => {
-            if (el.tagName.toLowerCase() === "style"){
-                el.textContent = el.textContent.replace(/\bbody\b/g, ":host");
+          // 🔹 Crear un fragmento para mantener orden
+          const fragment = document.createDocumentFragment();
+
+          // 1) Agregar estilos <style> y <link>
+          doc.querySelectorAll("link[rel='stylesheet'], style").forEach(el => {
+            if (el.tagName.toLowerCase() === "style") {
+              // Cambiar body -> :host para que los estilos funcionen dentro del Shadow DOM
+              el.textContent = el.textContent.replace(/\bbody\b/g, ":host");
             }
-            shadow.appendChild(el.cloneNode(true));
+            fragment.appendChild(el.cloneNode(true));
           });
 
-          // Inyectar contenido del <body>
+          // 2) Agregar el contenido del <body>
           if (doc.body) {
-            shadow.appendChild(doc.body.cloneNode(true));
+            fragment.appendChild(doc.body.cloneNode(true));
           }
 
-          // Reinyectar <script> (si tu CV tenía JS interno)
+          // 3) Agregar los scripts (internos o externos)
           doc.querySelectorAll("script").forEach(oldScript => {
             const newScript = document.createElement("script");
             if (oldScript.src) {
@@ -44,8 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               newScript.textContent = oldScript.textContent; // scripts inline
             }
-            shadow.appendChild(newScript);
+            fragment.appendChild(newScript);
           });
+
+          // 4) Insertar todo en el Shadow DOM
+          shadow.appendChild(fragment);
         })
         .catch(err => {
           shadow.innerHTML = `<p style="color:red">Error cargando ${file}</p>`;
