@@ -12,6 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (container) {
       const shadow = container.attachShadow({ mode: "open" });
 
+      // 🔹 Inyectar Bootstrap automáticamente en cada Shadow DOM
+      const bootstrapLink = document.createElement("link");
+      bootstrapLink.rel = "stylesheet";
+      bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
+      shadow.appendChild(bootstrapLink);
+
       fetch(file)
         .then(res => res.text())
         .then(html => {
@@ -45,4 +51,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
