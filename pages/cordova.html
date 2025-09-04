@@ -1,10 +1,315 @@
-<fieldset>
-    <legend>Cordova
-    </legend>
-    <p>
-        Aquí tienes un ejemplo de un directorio simple en HTML,
-         con una lista de personas y sus datos de contacto. 
-         Es básico, pero puedes ampliarlo con CSS o JavaScript 
-         si quieres que se vea más elegante o tenga más funciones:
-    </p>
-</fieldset>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV • IVAN DE LA CRUZ RIOS</title>
+  <meta name="description" content="Currículum Vitae." />
+  <style>
+    :root{
+      --bg: #0b0f19;           /* Cambia colores aquí */
+      --panel: #0f1525;
+      --muted: #9fb0d0;
+      --text: #e8eefc;
+      --accent: #5ac8fa;
+      --chip: #1a2236;
+      --ok: #3ddc84;
+      --shadow: 0 10px 28px rgba(3, 8, 20, .35);
+    }
+
+    *{box-sizing: border-box}
+    html,body{margin:0}
+    body{
+      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% 10%, #131a2b 0%, var(--bg) 60%);
+      padding: 32px; 
+    }
+
+    .cv{
+      max-width: 1024px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    header{
+      display: grid;
+      grid-template-columns: 120px 1fr auto; 
+      gap: 24px;
+      padding: 28px 28px 16px 28px;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(90,200,250,.10), rgba(8,13,24, .1));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .avatar{
+      width: 108px; height:108px; border-radius: 16px; object-fit: cover; 
+      background: #111827; border:1px solid rgba(255,255,255,.1);
+    }
+    /* 📸 REEMPLAZA el src de .avatar por la ruta de tu foto. Sube la imagen a la misma carpeta del HTML (ej: img/foto.jpg) */
+
+    .id h1{margin:0; font-size: 28px; letter-spacing:.2px}
+    .id h2{margin:4px 0 0; font-weight:600; font-size:16px; color: var(--muted)}
+
+    .contact{
+      display:flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted);
+      text-align: right;
+    }
+    .contact a{color:inherit; text-decoration:none}
+    .contact a:hover{color:var(--text); text-decoration: underline}
+
+    .wrap{
+      display:grid; grid-template-columns: 320px 1fr; gap: 24px; padding: 24px; 
+    }
+
+    aside, main{padding: 8px}
+
+    h3{margin: 0 0 10px; font-size: 14px; letter-spacing:.3px; text-transform: uppercase; color: var(--muted)}
+
+    .card{
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px; padding: 16px; margin-bottom: 16px;
+    }
+
+    .summary{font-size: 14px; color:#dbe7ff}
+
+    .chips{display:flex; flex-wrap: wrap; gap: 8px}
+    .chip{background: var(--chip); padding:6px 10px; border-radius: 999px; border:1px solid rgba(255,255,255,.08); font-size: 12px}
+
+    .item{display:grid; grid-template-columns: 1fr auto; gap: 8px; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,.08)}
+    .item:last-child{border-bottom:0}
+    .item h4{margin:0; font-size: 16px}
+    .item .where{color: var(--muted); font-size: 13px}
+    .item .when{color: var(--muted); font-size: 12px; white-space: nowrap}
+    .item ul{margin:8px 0 0 18px}
+
+    .meter{height: 8px; background: #0b1222; border-radius: 999px; overflow: hidden; border:1px solid rgba(255,255,255,.07)}
+    .meter > i{display:block; height:100%; width: var(--v, 50%); background: linear-gradient(90deg, var(--accent), var(--ok))}
+
+    .two{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+
+    footer{padding: 4px 24px 20px; color: var(--muted); font-size: 12px; text-align:center}
+
+    .btns{display:flex; gap:10px; justify-content:flex-end; padding: 0 24px 16px}
+    .btn{appearance:none; border:1px solid rgba(255,255,255,.16); background: #0f1525; color:var(--text); padding:8px 12px; border-radius:10px; cursor:pointer}
+    .btn:hover{filter: brightness(1.1)}
+
+    /* Responsive */
+    @media (max-width: 860px){
+      header{grid-template-columns: 80px 1fr; grid-auto-rows: min-content}
+      .contact{grid-column: 1 / -1; text-align:left}
+      .wrap{grid-template-columns: 1fr}
+    }
+
+    /* Optimizado para PDF/A4 al imprimir */
+    @media print{
+      body{background: none; padding:0}
+      .cv{box-shadow:none; border:none}
+      .btns{display:none}
+      @page{size: A4; margin: 10mm}
+    }
+  </style>
+</head>
+<body>
+  <div class="cv">
+    <header>
+      <!-- FOTO: Reemplaza el src a continuación por tu archivo (ej: "img/foto.jpg"). Tamaño ideal 600x600px. -->
+      <img class="avatar" src="../img/ivan.jpg" alt="Foto de Ivan" />
+
+      <div class="id">
+        <!-- DATOS PRINCIPALES: Nombre y título profesional -->
+        <h1>IVAN DE LA CRUZ RIOS</h1>
+        <h2>STTE EP / OFICIAL DEL EJERCITO DEL PERU 
+      </div>
+
+      <ul class="contact">
+        <!-- CONTACTO: Edita tus datos. Puedes borrar los que no uses. -->
+        <li><a href="idelacruzr0204@gmail.com">idelacruzr0204@gmail.com</a></li>
+        <li><a href="tel:934517825">+51 934517825</a></li>
+        <li>Lima, Peru</li>
+        <li><a href="https://github.com/tuusuario" target="_blank" rel="noreferrer">github.com/DANDI</a></li>
+        <li><a href="https://tu-portafolio.com" target="_blank" rel="noreferrer">SOLTERO</a></li>
+      </ul>
+    </header>
+
+    <div class="btns">
+      <!-- Botón para exportar a PDF (usa el diálogo de impresión del navegador) -->
+      <button class="btn" onclick="window.print()">Descargar PDF</button>
+    </div>
+
+    <div class="wrap">
+      <aside>
+        <section class="card">
+          <h3>Resumen</h3>
+          <!-- Resumen de 3–5 líneas: logros clave, años de experiencia y tecnologías o áreas de impacto. -->
+          <p class="summary">Licenciado en Ciencias Militares e Ingenieria. Especializado en Comunicaciones con foco en Telecomunicaciones. Soy comandante de seccion de la CIA COM N° 31.</p>
+        </section>
+
+        <section class="card">
+          <h3>Habilidades</h3>
+          <!-- Añade o elimina chips libremente. -->
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Docker</span>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Fortalezas</h3>
+          <!-- Cambia el porcentaje ajustando el width en --v (0%–100%). -->
+          <div style="margin: 8px 0">
+            Comunicación
+            <div class="meter"><i style="--v:85%"></i></div>
+          </div>
+          <div style="margin: 8px 0">
+            Liderazgo
+            <div class="meter"><i style="--v:90%"></i></div>
+          </div>
+          <div style="margin: 8px 0">
+            Resolución de problemas
+            <div class="meter"><i style="--v:90%"></i></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Idiomas</h3>
+          <div class="two">
+            <div>Español</div>
+            <div class="meter"><i style="--v:100%"></i></div>
+            <div>Inglés Avanzado</div>
+            <div class="meter"><i style="--v:70%"></i></div>
+            <div>Frances</div>
+            <div class="meter"><i style="--v:50%"></i></div>
+            <div>Chino Mandarin</div>
+            <div class="meter"><i style="--v:80%"></i></div>
+            <div>Ruso</div>
+            <div class="meter"><i style="--v:60%"></i></div>
+          </div>
+        </section>
+
+        <section class="card">
+          <h3>Certificaciones</h3>
+          <ul style="margin:0 0 0 18px">
+            <!-- Añade tus certs: nombre — emisor (año) -->
+            <li>Ciberseguridad — Cisco.Academy (2025)</li>
+            <li>Gestion Publica — San Marcos (2023)</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main>
+        <section class="card">
+          <h3>Experiencia</h3>
+
+          <!-- DUPLICA <article class="item"> por cada puesto -->
+          <article class="item">
+            <div>
+              <h4>PUESTO: CMDTE SECC — CIA COM N° 31</h4>
+              <div class="where">Chilca - Huancayo - Junin </div>
+              <ul>
+                <li>Participe en el conflicto del Cenepa como Jefe de Patrulla.</li>
+                <li>Participe en la Operacion Chavin de Huantar.</li>
+                <li>Participe en la Operacion Barba Roja.</li>
+              </ul>
+            </div>
+            <div class="when">Ene 1997 — Dic 2005</div>
+          </article>
+
+          <article class="item">
+            <div>
+              <h4>PUESTO:S4 - CIA COM N° 31</h4>
+              <div class="where">Chilca-Huancayo-Junin</div>
+              <ul>
+                <li>Felicitacion al Construir una Sala Tactica de Operaciones</li>
+                <li>Felicitacion al Construir el segundo piso de mi cuadra.</li>
+                <li>Condecorado a la medalla de Caceres por atrapar a Olga</li>
+              </ul>
+            </div>
+            <div class="when">Mar 2015 — Dic 2018</div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Proyectos Destacados</h3>
+          <!--  Añade proyectos con enlace al repo o demo -->
+          <article class="item">
+            <div>
+              <h4>Sistema de Vigilancia Fronteriza<a href="#" target="_blank" rel="noreferrer">Marzo-2023</a></h4>
+              <ul>
+                <li>Dificultad para monitorear zonas fronterizad extensas con patrullas tradicionales se empleo la teconologia de Drones de reconocimiento, camaras termicas, software de analisis de imagenes en tiempo real.</li>
+                <li>Resultados: Incremento del 60% en a deteccion de cruces ilegales.
+                    Reduccion en un 35% del tiempo de respuesta de las patrullas.
+                    Mas de 500 horas de vuelo autonomo registradas sin incidentes. 
+                </li>
+              </ul>
+            </div>
+            <div class="when">2024</div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Educación</h3>
+          <article class="item">
+            <div>
+              <h4>Doctor / PUCP </h4>
+              <div class="where">Lima, Peru</div>
+              <ul>
+                <li>Primaria  : I.E "Sebastian Lorente".</li>
+                <li>Secundaria: I.E.E. "Santa Isabel".</li>
+                <li>Superior: Univerdad de Chorrillo Francisco Bolognesi.</li>
+                <li>Doctorado: Pontifica Universidad Catolica del Peru .</li>
+                
+              </ul>
+            </div>
+            <div class="when">2018 — 2023</div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Extras</h3>
+          <div class="two">
+            <div>
+              <strong>Voluntariado</strong>
+              <ul>
+                <li>Curso de Paracaidismo militar</li>
+                <li>Curso de Operaciones de Ciberdefensa</li>
+                <li>Curso de Drones en Rusia</li>
+                <li>Curso de Guerra Electronica en Israel</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Intereses</strong>
+              <div class="chips">
+                <span class="chip">IA</span>
+                <span class="chip">Ciencia de datos</span>
+                <span class="chip">Lectura</span>
+                <span class="chip">Deporte</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <!-- Consejo: Mantén el CV en 1 página (máx. 2). Personaliza cada postulación con palabras clave del aviso. -->
+      Última actualización: <span id="updated"></span>
+    </footer>
+  </div>
+
+  <script>
+    //  Pone automáticamente la fecha de última actualización
+    document.getElementById('updated').textContent = new Date().toLocaleDateString('es-PE', { year:'numeric', month:'short' });
+  </script>
+</body>
+</html>
+>>>>>>> Stashed changes
