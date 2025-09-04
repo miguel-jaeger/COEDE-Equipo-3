@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (container) {
       const shadow = container.attachShadow({ mode: "open" });
 
-      // Inyectar Bootstrap automáticamente en cada Shadow DOM
+      // 🔹 Inyectar Bootstrap automáticamente en cada Shadow DOM
       const bootstrapLink = document.createElement("link");
       bootstrapLink.rel = "stylesheet";
       bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(html => {
           const doc = new DOMParser().parseFromString(html, "text/html");
 
-          // 🔹 Inyectar estilos <style> y <link>
+          // Inyectar estilos <style> y <link>
           doc.querySelectorAll("style, link[rel='stylesheet']").forEach(el => {
             if (el.tagName.toLowerCase() === "style") {
-              // 👇 Reemplazamos "body" por ":host" para que funcione en Shadow DOM
+              // 🔹 Cambiar body → :host para que el fondo y colores sí se apliquen dentro del Shadow DOM
               el.textContent = el.textContent.replace(/\bbody\b/g, ":host");
             }
             shadow.appendChild(el.cloneNode(true));
@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
             shadow.appendChild(doc.body.cloneNode(true));
           }
 
-          // Reinyectar <script>
+          // Reinyectar <script> (si tu CV tenía JS interno)
           doc.querySelectorAll("script").forEach(oldScript => {
             const newScript = document.createElement("script");
             if (oldScript.src) {
-              newScript.src = oldScript.src;
+              newScript.src = oldScript.src; // scripts externos
             } else {
-              newScript.textContent = oldScript.textContent;
+              newScript.textContent = oldScript.textContent; // scripts inline
             }
             shadow.appendChild(newScript);
           });
@@ -54,4 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
   });
+
+  // 🔹 Fecha de última actualización automática
+  const updatedEl = document.getElementById("updated");
+  if (updatedEl) {
+    updatedEl.textContent = new Date().toLocaleDateString("es-PE", {
+      year: "numeric",
+      month: "short"
+    });
+  }
 });

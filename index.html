@@ -5,75 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equipo 5</title>
 
-    
+    <!-- Script que carga los CVs -->
+    <script type="text/javascript" src="js/script-old.js"></script>
+
+    <!-- Estilos base oscuros para todo el index -->
     <style>
         body {
-            background-color: #0b0f19; 
-            color: #e8eefc;           
+            background: #0b0f19; /* Fondo global oscuro */
+            color: #fff;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
         }
 
-        header {
-            padding: 16px 24px;
-            background-color: #111827;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        header, footer {
+            background: #111827; 
+            padding: 1rem;
+            text-align: center;
         }
 
         header h1 {
             margin: 0;
-            font-size: 24px;
+            color: #38bdf8;
         }
 
-        header ul {
-            list-style: none;
+        nav ul {
             display: flex;
-            gap: 12px;
-            margin: 0;
+            justify-content: center;
+            gap: 1rem;
             padding: 0;
+            list-style: none;
         }
 
-        header ul li a {
-            color: #e8eefc;
+        nav a {
+            color: #93c5fd;
             text-decoration: none;
         }
 
-        header ul li a:hover {
-            color: #5ac8fa;
+        nav a:hover {
+            text-decoration: underline;
         }
 
         section {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            padding: 24px;
+            padding: 2rem;
+            display: grid;
+            gap: 2rem;
         }
 
-        footer {
-            padding: 16px 24px;
-            text-align: center;
-            color: #9fb0d0;
-            background-color: #111827;
+        article {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
         }
     </style>
-
-    
-    <script type="text/javascript" src="js/script-old.js"></script>
 </head>
 <body>
     <header>
         <h1>Equipo 5</h1>
-        <nav></nav>
-        <ul>
-            <li><a href="#delacruz">delacruz</a></li>
-            <li><a href="#altamirano">altamirano</a></li>
-            <li><a href="#lopezpuma">lopezpuma</a></li>
-            <li><a href="#molleda">molleda</a></li>
-            <li><a href="#cordova">cordova</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="#delacruz">delacruz</a></li>
+                <li><a href="#altamirano">altamirano</a></li>
+                <li><a href="#lopezpuma">lopezpuma</a></li>
+                <li><a href="#molleda">molleda</a></li>
+                <li><a href="#cordova">cordova</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section>
@@ -82,7 +79,7 @@
         <article id="lopezpuma"></article>
         <article id="molleda"></article>
         <article id="cordova"></article>
-    </section>
+    </section> 
 
     <footer>
         &copy; 2025 Equipo 5, Todos los derechos reservados.
