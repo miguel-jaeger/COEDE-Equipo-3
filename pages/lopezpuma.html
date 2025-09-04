@@ -1,72 +1,141 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis Datos Personales</title>
+
     <style>
-        body {
+      /*  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f0f8ff;
-            color: #333;
         }
-        .container {
-            background-color: white;
-            border-radius: 10px;
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .header {
+            background: #2575fc;
+            padding: 25px 20px;
+            color: white;
+        }
+        .photo-container {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 15px;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #f0f8ff;
         }
         h1 {
-            color: #2c3e50;
-            text-align: center;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .info-container {
+            padding: 25px;
         }
         .info-item {
-            margin: 15px 0;
-            padding: 10px;
-            background-color: #e8f4fc;
-            border-radius: 5px;
-            border-left: 4px solid #3498db;
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: #2575fc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+        }
+        .info-text {
+            text-align: left;
+            flex: 1;
         }
         .label {
-            font-weight: bold;
+            font-weight: 600;
+            color: #2575fc;
+            font-size: 0.9rem;
+        }
+        .value {
+            font-size: 1.1rem;
             color: #2c3e50;
         }
         .footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
+            padding: 15px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }*/
     </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Mis Datos Personales</h1>
-        
-        <div class="info-item">
-            <span class="label">Apellidos:</span> Lopez puma 
+
+    <div class="card">
+        <div class="header">
+            <div class="photo-container">
+                <div class="photo">
+                    <img src="../img/shga.jpg" alt="" width="130px">
+                </div>
+            </div>
+            <h1>Giancarlo Lopez Puma</h1>
         </div>
         
-        <div class="info-item">
-            <span class="label">Nombres:</span> Giancarlo
+        <div class="info-container">
+            <div class="info-item">
+                <div class="icon">👤</div>
+                <div class="info-text">
+                    <div class="label">NOMBRES</div>
+                    <div class="value">Giancarlo</div>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="icon">🏷️</div>
+                <div class="info-text">
+                    <div class="label">APELLIDOS</div>
+                    <div class="value">Lopez Puma</div>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="icon">🎂</div>
+                <div class="info-text">
+                    <div class="label">EDAD</div>
+                    <div class="value">24 años</div>
+                </div>
+            </div>
+            
+            <div class="info-item">
+                <div class="icon">🏫</div>
+                <div class="info-text">
+                    <div class="label">BIBLIOGRAFIA</div>
+                    <div class="value">Soy el stte com lopez puma giancarlo una de mis cosas que me gusta realizar 
+                        es el deporte de natacion y de futbol, me encanta el idioma ingles y el portugues, tambien 
+                        me gusta los fines de semana realizar parrilla con mi familia y estar en la playa</div>
+                    </menu></div>
+                </div>
+            </div>
         </div>
         
-        <div class="info-item">
-            <span class="label">Edad:</span> 24 años
-        </div>
-        
-        <div class="info-item">
-            <span class="label">Colegio donde estudié:</span> Colegio santa rosa de lima
-        </div>
-    </div>
-    
-    <div class="footer">
-        © 2023 - Información personal
-      </div>
-</body>
-</html>
