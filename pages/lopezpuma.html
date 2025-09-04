@@ -1,63 +1,177 @@
-<fieldset>
-    <legend> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-6-square" viewBox="0 0 16 16">
-  <path d="M8.21 3.855c1.612 0 2.515.99 2.573 1.899H9.494c-.1-.358-.51-.815-1.312-.815-1.078 0-1.817 1.09-1.805 3.036h.082c.229-.545.855-1.155 1.98-1.155 1.254 0 2.508.88 2.508 2.555 0 1.77-1.218 2.783-2.847 2.783-.932 0-1.84-.328-2.409-1.254-.369-.603-.597-1.459-.597-2.642 0-3.012 1.248-4.407 3.117-4.407Zm-.099 4.008c-.92 0-1.564.65-1.564 1.576 0 1.032.703 1.635 1.558 1.635.868 0 1.553-.533 1.553-1.629 0-1.06-.744-1.582-1.547-1.582"/>
-  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm15 0a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1z"/>
-</svg>STTE VELASQUEZ</legend>
-    <a href="#menu">Subir al menú</a>
-    <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Datos personales
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <ul>
-            <li>Nombre: Josemanuel Velasquez Mendoza</li>
-            <li>DNI: 72806937</li>
-            <li>Correo: josemavm.98@gmail.com<a href="mailto:juan.perez@gmail.com?subject=Dudas">Enviar correo</a></li>
-            <li>Dirección: Res. Héroes de San Juan y MNiraflores. Block 04, dpto. 501. SJM - LIMA, Perú</li>
-        </ul>
+  <style>
+    /*body {
+      background-image: url('https://i.ibb.co/8b4hsdP/camuflaje-militar.jpg'); /* Imagen de camuflaje 
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9); /* Caja blanca semi-transparente 
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 5px solid #2e3b2d;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #2e3b2d !important; /* Verde militar 
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .accordion-button {
+      font-weight: 600;
+      background-color: #2e3b2d;
+      color: white;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #3c4f3b;
+      color: #fff;
+    }
+    .accordion-body {
+      background: #fdfdfd;
+      border-left: 4px solid #2e3b2d;
+      padding: 15px;
+    }
+    footer {
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      color: #2e3b2d;
+    }*/
+  </style>
+
+
+  <div class="container py-5">
+    <!-- Encabezado -->
+    <div class="text-center mb-4">
+      <!-- FOTO -->
+      <img src="img/shga.jpg" alt="Foto de perfil" class="rounded-circle profile-img mb-3">
+      
+      <h1>Lopez puma giancarlo</h1>
+      <p class="mb-1"><strong>Tel:</strong> 932052582 | <strong>Email:</strong> lopezpumagiancarlo1@gmail.com</p>
+      <p class="mb-1"><strong>Ciudad:</strong> Lima, Perú</p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="accordion shadow-sm" id="cvAccordion">
+      
+      <!-- Perfil -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPerfil">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePerfil" aria-expanded="true">
+            Perfil Profesional
+          </button>
+        </h2>
+        <div id="collapsePerfil" class="accordion-collapse collapse show" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            Soy Oficial del Ejército del Perú de la especialidad de Comunicaciones, con gran conocimiento en el Idioma de ingles y quechua, un gran nadador y futbolista,asimismo tiene conocimiento de 
+            alta cocina y me gusta el rock.
+          </div>
+        </div>
+      </div>
+
+      <!-- Experiencia -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingExp">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExp">
+            Experiencia Laboral
+          </button>
+        </h2>
+        <div id="collapseExp" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Cargo:</strong> Cmdte de Sección <br>
+                  <strong>Unidad:</strong> CIA COM N°112 "BAGUA" <br>
+                  <strong>Fechas:</strong> 2023 - 2024</li>
+              <li><strong>Cargo:</strong> Oficial de tiro <br>
+                  <strong>Unidad:</strong> 6ta brig selva <br>
+                  <strong>Fechas:</strong> 2024 - 2025</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educación -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEdu">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdu">
+            Educación
+          </button>
+        </h2>
+        <div id="collapseEdu" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <p><strong>Colegio:</strong> IE Santa rosa de lima</p>
+            <p><strong>Universidad:</strong> Escuela Militar de Chorrillos "CFB"</p>
+            <p><strong>Carrera:</strong> Comunicaciones</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingHab">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHab">
+            Habilidades
+          </button>
+        </h2>
+        <div id="collapseHab" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <span class="badge bg-success">FRANCOTIRADOR</span>
+            <span class="badge bg-secondary">ANFIBIO</span>
+            <span class="badge bg-dark">PARAMEDICO</span>
+            <span class="badge bg-warning text-dark">TACTICO</span>
+            <span class="badge bg-success">GESTION DE VENTAS</span>
+            <span class="badge bg-danger">DANZANTE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingIdiomas">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIdiomas">
+            Idiomas
+          </button>
+        </h2>
+        <div id="collapseIdiomas" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Español (Nativo)</li>
+              <li>AYMARA (Intermedio)</li>
+              <li>AGUAJUN (Básico)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyectos -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingProyectos">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProyectos">
+            Proyectos y Logros
+          </button>
+        </h2>
+        <div id="collapseProyectos" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Gestióno una cabina shelter sin dar gastos a la cia com n°116.</li>
+              <li>Adquirio una parrila para la cia com n°116.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+      <p>© 2025 - CV de Lopez puma giancarlo</p>
+    </footer>
   </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Datos de estudio
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Datos de trabajo
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-        Superación profesional
-      </button>
-    </h2>
-    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item’s accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It’s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
-   <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
-</fieldset>
+
+
+   
