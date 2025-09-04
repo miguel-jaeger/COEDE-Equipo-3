@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const bootstrapLink = document.createElement("link");
       bootstrapLink.rel = "stylesheet";
       bootstrapLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css";
-      shadow.appendChild(bootstrapLink);
+      shadow.appendChild(bootstrap);
 
       fetch(file)
         .then(res => res.text())
