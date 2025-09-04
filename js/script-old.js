@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
   const miembros = {
     delacruz: "pages/delacruz.html",
@@ -40,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
           // Reinyectar <script> (si tu CV tenía JS interno)
           doc.querySelectorAll("script").forEach(oldScript => {
             const newScript = document.createElement("script");
-            if (newScript.src) {
-              newScript.src = newScript.src; // scripts externos
+            if (oldScript.src) {
+              newScript.src = oldScript.src; // scripts externos
             } else {
-              newScript.textContent = newScript.textContent; // scripts inline
+              newScript.textContent = oldScript.textContent; // scripts inline
             }
             shadow.appendChild(newScript);
           });
@@ -64,3 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
