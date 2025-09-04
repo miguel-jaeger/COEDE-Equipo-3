@@ -1,141 +1,177 @@
+  <style>
+    /*body {
+      background-image: url('https://i.ibb.co/8b4hsdP/camuflaje-militar.jpg'); /* Imagen de camuflaje 
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9); /* Caja blanca semi-transparente 
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 5px solid #2e3b2d;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #2e3b2d !important; /* Verde militar 
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .accordion-button {
+      font-weight: 600;
+      background-color: #2e3b2d;
+      color: white;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #3c4f3b;
+      color: #fff;
+    }
+    .accordion-body {
+      background: #fdfdfd;
+      border-left: 4px solid #2e3b2d;
+      padding: 15px;
+    }
+    footer {
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      color: #2e3b2d;
+    }*/
+  </style>
 
-    <style>
-      /*  * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        .card {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 450px;
-            overflow: hidden;
-            text-align: center;
-        }
-        .header {
-            background: #2575fc;
-            padding: 25px 20px;
-            color: white;
-        }
-        .photo-container {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 15px;
-            border: 4px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        .photo {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background-color: #f0f8ff;
-        }
-        h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        .info-container {
-            padding: 25px;
-        }
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            padding: 12px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-        .icon {
-            width: 40px;
-            height: 40px;
-            background: #2575fc;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 15px;
-            color: white;
-            font-size: 1.2rem;
-        }
-        .info-text {
-            text-align: left;
-            flex: 1;
-        }
-        .label {
-            font-weight: 600;
-            color: #2575fc;
-            font-size: 0.9rem;
-        }
-        .value {
-            font-size: 1.1rem;
-            color: #2c3e50;
-        }
-        .footer {
-            padding: 15px;
-            background: #f8f9fa;
-            color: #6c757d;
-            font-size: 0.9rem;
-        }*/
-    </style>
 
-    <div class="card">
-        <div class="header">
-            <div class="photo-container">
-                <div class="photo">
-                    <img src="../img/shga.jpg" alt="" width="130px">
-                </div>
-            </div>
-            <h1>Giancarlo Lopez Puma</h1>
+  <div class="container py-5">
+    <!-- Encabezado -->
+    <div class="text-center mb-4">
+      <!-- FOTO -->
+      <img src="img/shga.jpg" alt="Foto de perfil" class="rounded-circle profile-img mb-3">
+      
+      <h1>Lopez puma giancarlo</h1>
+      <p class="mb-1"><strong>Tel:</strong> 932052582 | <strong>Email:</strong> lopezpumagiancarlo1@gmail.com</p>
+      <p class="mb-1"><strong>Ciudad:</strong> Lima, Perú</p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="accordion shadow-sm" id="cvAccordion">
+      
+      <!-- Perfil -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPerfil">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePerfil" aria-expanded="true">
+            Perfil Profesional
+          </button>
+        </h2>
+        <div id="collapsePerfil" class="accordion-collapse collapse show" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            Soy Oficial del Ejército del Perú de la especialidad de Comunicaciones, con gran conocimiento en el Idioma de ingles y quechua, un gran nadador y futbolista,asimismo tiene conocimiento de 
+            alta cocina y me gusta el rock.
+          </div>
         </div>
-        
-        <div class="info-container">
-            <div class="info-item">
-                <div class="icon">👤</div>
-                <div class="info-text">
-                    <div class="label">NOMBRES</div>
-                    <div class="value">Giancarlo</div>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <div class="icon">🏷️</div>
-                <div class="info-text">
-                    <div class="label">APELLIDOS</div>
-                    <div class="value">Lopez Puma</div>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <div class="icon">🎂</div>
-                <div class="info-text">
-                    <div class="label">EDAD</div>
-                    <div class="value">24 años</div>
-                </div>
-            </div>
-            
-            <div class="info-item">
-                <div class="icon">🏫</div>
-                <div class="info-text">
-                    <div class="label">BIBLIOGRAFIA</div>
-                    <div class="value">Soy el stte com lopez puma giancarlo una de mis cosas que me gusta realizar 
-                        es el deporte de natacion y de futbol, me encanta el idioma ingles y el portugues, tambien 
-                        me gusta los fines de semana realizar parrilla con mi familia y estar en la playa</div>
-                    </menu></div>
-                </div>
-            </div>
+      </div>
+
+      <!-- Experiencia -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingExp">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExp">
+            Experiencia Laboral
+          </button>
+        </h2>
+        <div id="collapseExp" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Cargo:</strong> Cmdte de Sección <br>
+                  <strong>Unidad:</strong> CIA COM N°112 "BAGUA" <br>
+                  <strong>Fechas:</strong> 2023 - 2024</li>
+              <li><strong>Cargo:</strong> Oficial de tiro <br>
+                  <strong>Unidad:</strong> 6ta brig selva <br>
+                  <strong>Fechas:</strong> 2024 - 2025</li>
+            </ul>
+          </div>
         </div>
-        
+      </div>
+
+      <!-- Educación -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEdu">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdu">
+            Educación
+          </button>
+        </h2>
+        <div id="collapseEdu" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <p><strong>Colegio:</strong> IE Santa rosa de lima</p>
+            <p><strong>Universidad:</strong> Escuela Militar de Chorrillos "CFB"</p>
+            <p><strong>Carrera:</strong> Comunicaciones</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingHab">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHab">
+            Habilidades
+          </button>
+        </h2>
+        <div id="collapseHab" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <span class="badge bg-success">FRANCOTIRADOR</span>
+            <span class="badge bg-secondary">ANFIBIO</span>
+            <span class="badge bg-dark">PARAMEDICO</span>
+            <span class="badge bg-warning text-dark">TACTICO</span>
+            <span class="badge bg-success">GESTION DE VENTAS</span>
+            <span class="badge bg-danger">DANZANTE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingIdiomas">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIdiomas">
+            Idiomas
+          </button>
+        </h2>
+        <div id="collapseIdiomas" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Español (Nativo)</li>
+              <li>AYMARA (Intermedio)</li>
+              <li>AGUAJUN (Básico)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyectos -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingProyectos">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProyectos">
+            Proyectos y Logros
+          </button>
+        </h2>
+        <div id="collapseProyectos" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Gestióno una cabina shelter sin dar gastos a la cia com n°116.</li>
+              <li>Adquirio una parrila para la cia com n°116.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+      <p>© 2025 - CV de Lopez puma giancarlo</p>
+    </footer>
+  </div>
+
+
+   
