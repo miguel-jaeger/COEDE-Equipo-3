@@ -1,10 +1,187 @@
-<fieldset>
-    <legend>altamirano
-    </legend>
-    <p>
-        Aquí tienes un ejemplo de un directorio simple en HTML,
-         con una lista de personas y sus datos de contacto. 
-         Es básico, pero puedes ampliarlo con CSS o JavaScript 
-         si quieres que se vea más elegante o tenga más funciones:
-    </p>
-</fieldset>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Altamirano Samanez Brando</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-image: url('https://i.ibb.co/8b4hsdP/camuflaje-militar.jpg'); /* Imagen de camuflaje */
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9); /* Caja blanca semi-transparente */
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border: 5px solid #2e3b2d;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: #2e3b2d !important; /* Verde militar */
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .accordion-button {
+      font-weight: 600;
+      background-color: #2e3b2d;
+      color: white;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #3c4f3b;
+      color: #fff;
+    }
+    .accordion-body {
+      background: #fdfdfd;
+      border-left: 4px solid #2e3b2d;
+      padding: 15px;
+    }
+    footer {
+      border-top: 1px solid #444;
+      padding-top: 15px;
+      color: #2e3b2d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+    <!-- Encabezado -->
+    <div class="text-center mb-4">
+      <!-- FOTO -->
+      <img src="alfz.jpeg" alt="Foto de perfil" class="rounded-circle profile-img mb-3">
+      
+      <h1>Altamirano Samanez Brando</h1>
+      <p class="mb-1"><strong>Tel:</strong> 929065675 | <strong>Email:</strong> baltamiranos02@gmail.com</p>
+      <p class="mb-1"><strong>Ciudad:</strong> Lima, Perú</p>
+    </div>
+
+    <!-- Accordion -->
+    <div class="accordion shadow-sm" id="cvAccordion">
+      
+      <!-- Perfil -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingPerfil">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePerfil" aria-expanded="true">
+            Perfil Profesional
+          </button>
+        </h2>
+        <div id="collapsePerfil" class="accordion-collapse collapse show" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            Soy Oficial del Ejército del Perú de la especialidad de Artillería, actualmente me encuentro cursando en el Programa de Operaciones de Ciberdefensa con interés en desarrollo web y administración de negocios.
+          </div>
+        </div>
+      </div>
+
+      <!-- Experiencia -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingExp">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExp">
+            Experiencia Laboral
+          </button>
+        </h2>
+        <div id="collapseExp" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li><strong>Cargo:</strong> Cmdte de Sección <br>
+                  <strong>Unidad:</strong> GAB N°211 "José Gálvez" <br>
+                  <strong>Fechas:</strong> 2023 - 2024</li>
+              <li><strong>Cargo:</strong> Cmdte de Batería <br>
+                  <strong>Unidad:</strong> GAAAé N°111 <br>
+                  <strong>Fechas:</strong> 2024 - 2025</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Educación -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingEdu">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdu">
+            Educación
+          </button>
+        </h2>
+        <div id="collapseEdu" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <p><strong>Colegio:</strong> IE Juan Espinoza Medrano</p>
+            <p><strong>Universidad:</strong> Escuela Militar de Chorrillos "CFB"</p>
+            <p><strong>Carrera:</strong> Artillería</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingHab">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHab">
+            Habilidades
+          </button>
+        </h2>
+        <div id="collapseHab" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <span class="badge bg-success">HTML</span>
+            <span class="badge bg-secondary">CSS</span>
+            <span class="badge bg-dark">Bootstrap</span>
+            <span class="badge bg-warning text-dark">Microsoft Office</span>
+            <span class="badge bg-success">Administración de negocios</span>
+            <span class="badge bg-danger">Gestión de equipos</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idiomas -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingIdiomas">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIdiomas">
+            Idiomas
+          </button>
+        </h2>
+        <div id="collapseIdiomas" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Español (Nativo)</li>
+              <li>Inglés (Intermedio)</li>
+              <li>Quechua (Básico)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyectos -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingProyectos">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProyectos">
+            Proyectos y Logros
+          </button>
+        </h2>
+        <div id="collapseProyectos" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
+          <div class="accordion-body">
+            <ul>
+              <li>Gestión de un negocio gastronómico enfocado en la preparación y difusión de la tradicional Caja China peruana.</li>
+              <li>Gestión de un negocio de barbería.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-4">
+      <p>© 2025 - CV de Altamirano Samanez Brando</p>
+    </footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
