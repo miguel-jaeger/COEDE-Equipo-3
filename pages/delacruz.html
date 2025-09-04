@@ -1,7 +1,13 @@
-
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV • IVAN DE LA CRUZ RIOS</title>
+  <meta name="description" content="Currículum Vitae." />
   <style>
-   /* :root{
-      --bg: #0b0f19;           /* Cambia colores aquí 
+    :root{
+      --bg: #0b0f19;           /* Cambia colores aquí */
       --panel: #0f1525;
       --muted: #9fb0d0;
       --text: #e8eefc;
@@ -43,7 +49,7 @@
       width: 108px; height:108px; border-radius: 16px; object-fit: cover; 
       background: #111827; border:1px solid rgba(255,255,255,.1);
     }
-    /* 📸 REEMPLAZA el src de .avatar por la ruta de tu foto. Sube la imagen a la misma carpeta del HTML (ej: img/foto.jpg) 
+    /* 📸 REEMPLAZA el src de .avatar por la ruta de tu foto. Sube la imagen a la misma carpeta del HTML (ej: img/foto.jpg) */
 
     .id h1{margin:0; font-size: 28px; letter-spacing:.2px}
     .id h2{margin:4px 0 0; font-weight:600; font-size:16px; color: var(--muted)}
@@ -92,23 +98,23 @@
     .btn{appearance:none; border:1px solid rgba(255,255,255,.16); background: #0f1525; color:var(--text); padding:8px 12px; border-radius:10px; cursor:pointer}
     .btn:hover{filter: brightness(1.1)}
 
-    /* Responsive 
+    /* Responsive */
     @media (max-width: 860px){
       header{grid-template-columns: 80px 1fr; grid-auto-rows: min-content}
       .contact{grid-column: 1 / -1; text-align:left}
       .wrap{grid-template-columns: 1fr}
     }
 
-    /* Optimizado para PDF/A4 al imprimir 
+    /* Optimizado para PDF/A4 al imprimir */
     @media print{
       body{background: none; padding:0}
       .cv{box-shadow:none; border:none}
       .btns{display:none}
       @page{size: A4; margin: 10mm}
-      
-    }*/
+    }
   </style>
-
+</head>
+<body>
   <div class="cv">
     <header>
       <!-- FOTO: Reemplaza el src a continuación por tu archivo (ej: "img/foto.jpg"). Tamaño ideal 600x600px. -->
@@ -301,8 +307,9 @@
   </div>
 
   <script>
-    //  Pone automáticamente la fecha de última actualización-->
+    //  Pone automáticamente la fecha de última actualización
     document.getElementById('updated').textContent = new Date().toLocaleDateString('es-PE', { year:'numeric', month:'short' });
   </script>
-
-
+</body>
+</html>
+>>>>>>> Stashed changes
