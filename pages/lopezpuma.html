@@ -1,177 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV • IVAN DE LA CRUZ RIOS</title>
+  <meta name="description" content="Currículum Vitae." />
   <style>
-    /*body {
-      background-image: url('https://i.ibb.co/8b4hsdP/camuflaje-militar.jpg'); /* Imagen de camuflaje 
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    :root{
+      --bg: #0b0f19;           /* Cambia colores aquí */
+      --panel: #0f1525;
+      --muted: #9fb0d0;
+      --text: #e8eefc;
+      --accent: #5ac8fa;
+      --chip: #1a2236;
+      --ok: #3ddc84;
+      --shadow: 0 10px 28px rgba(3, 8, 20, .35);
     }
-    .container {
-      background: rgba(255, 255, 255, 0.9); /* Caja blanca semi-transparente 
-      border-radius: 15px;
-      padding: 30px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
+    *{box-sizing: border-box}
+    html,body{margin:0}
+    body{
+      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 10% 10%, #131a2b 0%, var(--bg) 60%);
+      padding: 32px; 
     }
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border: 5px solid #2e3b2d;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+    .cv{
+      max-width: 1024px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    h1 {
-      color: #2e3b2d !important; /* Verde militar 
-      font-weight: 700;
-      text-transform: uppercase;
+
+    header{
+      display: grid;
+      grid-template-columns: 120px 1fr auto; 
+      gap: 24px;
+      padding: 28px 28px 16px 28px;
+      align-items: center;
+      background: linear-gradient(90deg, rgba(90,200,250,.10), rgba(8,13,24, .1));
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
-    .accordion-button {
-      font-weight: 600;
-      background-color: #2e3b2d;
-      color: white;
+    .avatar{
+      width: 108px; height:108px; border-radius: 16px; object-fit: cover; 
+      background: #111827; border:1px solid rgba(255,255,255,.1);
     }
-    .accordion-button:not(.collapsed) {
-      background-color: #3c4f3b;
-      color: #fff;
+    /* 📸 REEMPLAZA el src de .avatar por la ruta de tu foto. Sube la imagen a la misma carpeta del HTML (ej: img/foto.jpg) */
+
+    .id h1{margin:0; font-size: 28px; letter-spacing:.2px}
+    .id h2{margin:4px 0 0; font-weight:600; font-size:16px; color: var(--muted)}
+
+    .contact{
+      display:flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted);
+      text-align: right;
     }
-    .accordion-body {
-      background: #fdfdfd;
-      border-left: 4px solid #2e3b2d;
-      padding: 15px;
+    .contact a{color:inherit; text-decoration:none}
+    .contact a:hover{color:var(--text); text-decoration: underline}
+
+    .wrap{
+      display:grid; grid-template-columns: 320px 1fr; gap: 24px; padding: 24px; 
     }
-    footer {
-      border-top: 1px solid #444;
-      padding-top: 15px;
-      color: #2e3b2d;
-    }*/
+
+    aside, main{padding: 8px}
+
+    h3{margin: 0 0 10px; font-size: 14px; letter-spacing:.3px; text-transform: uppercase; color: var(--muted)}
+
+    .card{
+      background: var(--panel);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 16px; padding: 16px; margin-bottom: 16px;
+    }
+
+    .summary{font-size: 14px; color:#dbe7ff}
+
+    .chips{display:flex; flex-wrap: wrap; gap: 8px}
+    .chip{background: var(--chip); padding:6px 10px; border-radius: 999px; border:1px solid rgba(255,255,255,.08); font-size: 12px}
+
+    .item{display:grid; grid-template-columns: 1fr auto; gap: 8px; padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,.08)}
+    .item:last-child{border-bottom:0}
+    .item h4{margin:0; font-size: 16px}
+    .item .where{color: var(--muted); font-size: 13px}
+    .item .when{color: var(--muted); font-size: 12px; white-space: nowrap}
+    .item ul{margin:8px 0 0 18px}
+
+    .meter{height: 8px; background: #0b1222; border-radius: 999px; overflow: hidden; border:1px solid rgba(255,255,255,.07)}
+    .meter > i{display:block; height:100%; width: var(--v, 50%); background: linear-gradient(90deg, var(--accent), var(--ok))}
+
+    .two{display:grid; grid-template-columns: 1fr 1fr; gap: 12px}
+
+    footer{padding: 4px 24px 20px; color: var(--muted); font-size: 12px; text-align:center}
+
+    .btns{display:flex; gap:10px; justify-content:flex-end; padding: 0 24px 16px}
+    .btn{appearance:none; border:1px solid rgba(255,255,255,.16); background: #0f1525; color:var(--text); padding:8px 12px; border-radius:10px; cursor:pointer}
+    .btn:hover{filter: brightness(1.1)}
+
+    /* Responsive */
+    @media (max-width: 860px){
+      header{grid-template-columns: 80px 1fr; grid-auto-rows: min-content}
+      .contact{grid-column: 1 / -1; text-align:left}
+      .wrap{grid-template-columns: 1fr}
+    }
+
+    /* Optimizado para PDF/A4 al imprimir */
+    @media print{
+      body{background: none; padding:0}
+      .cv{box-shadow:none; border:none}
+      .btns{display:none}
+      @page{size: A4; margin: 10mm}
+    }
   </style>
+</head>
+<body>
+  <div class="cv">
+    <header>
+      <!-- FOTO: Reemplaza el src a continuación por tu archivo (ej: "img/foto.jpg"). Tamaño ideal 600x600px. -->
+      <img class="avatar" src="../img/ivan.jpg" alt="Foto de Ivan" />
 
+      <div class="id">
+        <!-- DATOS PRINCIPALES: Nombre y título profesional -->
+        <h1>IVAN DE LA CRUZ RIOS</h1>
+        <h2>STTE EP / OFICIAL DEL EJERCITO DEL PERU 
+      </div>
 
-  <div class="container py-5">
-    <!-- Encabezado -->
-    <div class="text-center mb-4">
-      <!-- FOTO -->
-      <img src="img/shga.jpg" alt="Foto de perfil" class="rounded-circle profile-img mb-3">
-      
-      <h1>Lopez puma giancarlo</h1>
-      <p class="mb-1"><strong>Tel:</strong> 932052582 | <strong>Email:</strong> lopezpumagiancarlo1@gmail.com</p>
-      <p class="mb-1"><strong>Ciudad:</strong> Lima, Perú</p>
+      <ul class="contact">
+        <!-- CONTACTO: Edita tus datos. Puedes borrar los que no uses. -->
+        <li><a href="idelacruzr0204@gmail.com">idelacruzr0204@gmail.com</a></li>
+        <li><a href="tel:934517825">+51 934517825</a></li>
+        <li>Lima, Peru</li>
+        <li><a href="https://github.com/tuusuario" target="_blank" rel="noreferrer">github.com/DANDI</a></li>
+        <li><a href="https://tu-portafolio.com" target="_blank" rel="noreferrer">SOLTERO</a></li>
+      </ul>
+    </header>
+
+    <div class="btns">
+      <!-- Botón para exportar a PDF (usa el diálogo de impresión del navegador) -->
+      <button class="btn" onclick="window.print()">Descargar PDF</button>
     </div>
 
-    <!-- Accordion -->
-    <div class="accordion shadow-sm" id="cvAccordion">
-      
-      <!-- Perfil -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingPerfil">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePerfil" aria-expanded="true">
-            Perfil Profesional
-          </button>
-        </h2>
-        <div id="collapsePerfil" class="accordion-collapse collapse show" data-bs-parent="#cvAccordion">
-          <div class="accordion-body">
-            Soy Oficial del Ejército del Perú de la especialidad de Comunicaciones, con gran conocimiento en el Idioma de ingles y quechua, un gran nadador y futbolista,asimismo tiene conocimiento de 
-            alta cocina y me gusta el rock.
-          </div>
-        </div>
-      </div>
+    <div class="wrap">
+      <aside>
+        <section class="card">
+          <h3>Resumen</h3>
+          <!-- Resumen de 3–5 líneas: logros clave, años de experiencia y tecnologías o áreas de impacto. -->
+          <p class="summary">Licenciado en Ciencias Militares e Ingenieria. Especializado en Comunicaciones con foco en Telecomunicaciones. Soy comandante de seccion de la CIA COM N° 31.</p>
+        </section>
 
-      <!-- Experiencia -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingExp">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExp">
-            Experiencia Laboral
-          </button>
-        </h2>
-        <div id="collapseExp" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li><strong>Cargo:</strong> Cmdte de Sección <br>
-                  <strong>Unidad:</strong> CIA COM N°112 "BAGUA" <br>
-                  <strong>Fechas:</strong> 2023 - 2024</li>
-              <li><strong>Cargo:</strong> Oficial de tiro <br>
-                  <strong>Unidad:</strong> 6ta brig selva <br>
-                  <strong>Fechas:</strong> 2024 - 2025</li>
-            </ul>
+        <section class="card">
+          <h3>Habilidades</h3>
+          <!-- Añade o elimina chips libremente. -->
+          <div class="chips">
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">SQL</span>
+            <span class="chip">Python</span>
+            <span class="chip">Docker</span>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- Educación -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingEdu">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEdu">
-            Educación
-          </button>
-        </h2>
-        <div id="collapseEdu" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
-          <div class="accordion-body">
-            <p><strong>Colegio:</strong> IE Santa rosa de lima</p>
-            <p><strong>Universidad:</strong> Escuela Militar de Chorrillos "CFB"</p>
-            <p><strong>Carrera:</strong> Comunicaciones</p>
+        <section class="card">
+          <h3>Fortalezas</h3>
+          <!-- Cambia el porcentaje ajustando el width en --v (0%–100%). -->
+          <div style="margin: 8px 0">
+            Comunicación
+            <div class="meter"><i style="--v:85%"></i></div>
           </div>
-        </div>
-      </div>
+          <div style="margin: 8px 0">
+            Liderazgo
+            <div class="meter"><i style="--v:90%"></i></div>
+          </div>
+          <div style="margin: 8px 0">
+            Resolución de problemas
+            <div class="meter"><i style="--v:90%"></i></div>
+          </div>
+        </section>
 
-      <!-- Habilidades -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingHab">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHab">
-            Habilidades
-          </button>
-        </h2>
-        <div id="collapseHab" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
-          <div class="accordion-body">
-            <span class="badge bg-success">FRANCOTIRADOR</span>
-            <span class="badge bg-secondary">ANFIBIO</span>
-            <span class="badge bg-dark">PARAMEDICO</span>
-            <span class="badge bg-warning text-dark">TACTICO</span>
-            <span class="badge bg-success">GESTION DE VENTAS</span>
-            <span class="badge bg-danger">DANZANTE</span>
+        <section class="card">
+          <h3>Idiomas</h3>
+          <div class="two">
+            <div>Español</div>
+            <div class="meter"><i style="--v:100%"></i></div>
+            <div>Inglés Avanzado</div>
+            <div class="meter"><i style="--v:70%"></i></div>
+            <div>Frances</div>
+            <div class="meter"><i style="--v:50%"></i></div>
+            <div>Chino Mandarin</div>
+            <div class="meter"><i style="--v:80%"></i></div>
+            <div>Ruso</div>
+            <div class="meter"><i style="--v:60%"></i></div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <!-- Idiomas -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingIdiomas">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIdiomas">
-            Idiomas
-          </button>
-        </h2>
-        <div id="collapseIdiomas" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li>Español (Nativo)</li>
-              <li>AYMARA (Intermedio)</li>
-              <li>AGUAJUN (Básico)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+        <section class="card">
+          <h3>Certificaciones</h3>
+          <ul style="margin:0 0 0 18px">
+            <!-- Añade tus certs: nombre — emisor (año) -->
+            <li>Ciberseguridad — Cisco.Academy (2025)</li>
+            <li>Gestion Publica — San Marcos (2023)</li>
+          </ul>
+        </section>
+      </aside>
 
-      <!-- Proyectos -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="headingProyectos">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProyectos">
-            Proyectos y Logros
-          </button>
-        </h2>
-        <div id="collapseProyectos" class="accordion-collapse collapse" data-bs-parent="#cvAccordion">
-          <div class="accordion-body">
-            <ul>
-              <li>Gestióno una cabina shelter sin dar gastos a la cia com n°116.</li>
-              <li>Adquirio una parrila para la cia com n°116.</li>
-            </ul>
+      <main>
+        <section class="card">
+          <h3>Experiencia</h3>
+
+          <!-- DUPLICA <article class="item"> por cada puesto -->
+          <article class="item">
+            <div>
+              <h4>PUESTO: CMDTE SECC — CIA COM N° 31</h4>
+              <div class="where">Chilca - Huancayo - Junin </div>
+              <ul>
+                <li>Participe en el conflicto del Cenepa como Jefe de Patrulla.</li>
+                <li>Participe en la Operacion Chavin de Huantar.</li>
+                <li>Participe en la Operacion Barba Roja.</li>
+              </ul>
+            </div>
+            <div class="when">Ene 1997 — Dic 2005</div>
+          </article>
+
+          <article class="item">
+            <div>
+              <h4>PUESTO:S4 - CIA COM N° 31</h4>
+              <div class="where">Chilca-Huancayo-Junin</div>
+              <ul>
+                <li>Felicitacion al Construir una Sala Tactica de Operaciones</li>
+                <li>Felicitacion al Construir el segundo piso de mi cuadra.</li>
+                <li>Condecorado a la medalla de Caceres por atrapar a Olga</li>
+              </ul>
+            </div>
+            <div class="when">Mar 2015 — Dic 2018</div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Proyectos Destacados</h3>
+          <!--  Añade proyectos con enlace al repo o demo -->
+          <article class="item">
+            <div>
+              <h4>Sistema de Vigilancia Fronteriza<a href="#" target="_blank" rel="noreferrer">Marzo-2023</a></h4>
+              <ul>
+                <li>Dificultad para monitorear zonas fronterizad extensas con patrullas tradicionales se empleo la teconologia de Drones de reconocimiento, camaras termicas, software de analisis de imagenes en tiempo real.</li>
+                <li>Resultados: Incremento del 60% en a deteccion de cruces ilegales.
+                    Reduccion en un 35% del tiempo de respuesta de las patrullas.
+                    Mas de 500 horas de vuelo autonomo registradas sin incidentes. 
+                </li>
+              </ul>
+            </div>
+            <div class="when">2024</div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Educación</h3>
+          <article class="item">
+            <div>
+              <h4>Doctor / PUCP </h4>
+              <div class="where">Lima, Peru</div>
+              <ul>
+                <li>Primaria  : I.E "Sebastian Lorente".</li>
+                <li>Secundaria: I.E.E. "Santa Isabel".</li>
+                <li>Superior: Univerdad de Chorrillo Francisco Bolognesi.</li>
+                <li>Doctorado: Pontifica Universidad Catolica del Peru .</li>
+                
+              </ul>
+            </div>
+            <div class="when">2018 — 2023</div>
+          </article>
+        </section>
+
+        <section class="card">
+          <h3>Extras</h3>
+          <div class="two">
+            <div>
+              <strong>Voluntariado</strong>
+              <ul>
+                <li>Curso de Paracaidismo militar</li>
+                <li>Curso de Operaciones de Ciberdefensa</li>
+                <li>Curso de Drones en Rusia</li>
+                <li>Curso de Guerra Electronica en Israel</li>
+              </ul>
+            </div>
+            <div>
+              <strong>Intereses</strong>
+              <div class="chips">
+                <span class="chip">IA</span>
+                <span class="chip">Ciencia de datos</span>
+                <span class="chip">Lectura</span>
+                <span class="chip">Deporte</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </main>
     </div>
 
-    <!-- Footer -->
-    <footer class="text-center mt-4">
-      <p>© 2025 - CV de Lopez puma giancarlo</p>
+    <footer>
+      <!-- Consejo: Mantén el CV en 1 página (máx. 2). Personaliza cada postulación con palabras clave del aviso. -->
+      Última actualización: <span id="updated"></span>
     </footer>
   </div>
 
-
-   
+  <script>
+    //  Pone automáticamente la fecha de última actualización
+    document.getElementById('updated').textContent = new Date().toLocaleDateString('es-PE', { year:'numeric', month:'short' });
+  </script>
+</body>
+</html>
+>>>>>>> Stashed changes
