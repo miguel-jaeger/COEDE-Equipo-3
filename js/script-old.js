@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
           // Reinyectar <script> (si tu CV tenía JS interno)
           doc.querySelectorAll("script").forEach(oldScript => {
             const newScript = document.createElement("script");
-            if (oldScript.src) {
-              newScript.src = oldScript.src; // scripts externos
+            if (newScript.src) {
+              newScript.src = newScript.src; // scripts externos
             } else {
-              newScript.textContent = oldScript.textContent; // scripts inline
+              newScript.textContent = newScript.textContent; // scripts inline
             }
             shadow.appendChild(newScript);
           });
