@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
           // Inyectar estilos <style> y <link>
           doc.querySelectorAll("style, link[rel='stylesheet']").forEach(el => {
+            if (el.tagName.toLowerCase() === "style"){
+                el.textContent = el.textContent.replace(/\bbody\b/g, ":host");
+            }
             shadow.appendChild(el.cloneNode(true));
           });
 
